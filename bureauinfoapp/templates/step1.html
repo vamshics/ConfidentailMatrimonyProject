@@ -1,0 +1,175 @@
+{% extends 'headfooter.html' %}
+{% block content %}
+{% load staticfiles %}
+				<section>
+                            <section class="list_jobs">
+                                <div class="container">
+                                    
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-10">
+                                            <form class="c-form" action="{%  url 'save' %}" method = "post" enctype="multipart/form-data">
+                                                {% csrf_token %}
+                                        <input type="text" name="rrvk" value="{{ss.id}}" >
+                                        <div class="box">
+						<div class="box-header">
+							<h4><img src="{% static 'img/icons/01.png' %}">&nbsp;&nbsp;Basic Details</h4>
+						</div>
+						<div class="box-body">
+							<div class="row">
+							
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label> First Name</label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" placeholder="Enter First Name" name="fname" value="{{ ss.firstname }}">
+                                        </div>
+                                    </div>
+                                     <div class="row">
+                                        <div class="col-md-2">
+                                            <label> Last Name</label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" placeholder="Enter Last Name" name="sname" value="{{ ss.lastname }}">
+                                        </div>
+                                    </div>
+									<div class="row">
+                                        <div class="col-md-2">
+                                            <label> Email id</label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" placeholder="Enter Email id" name="email" value="{{ ss.email }}">
+                                        </div>
+                                    </div>
+									<div class="row">
+                                        <div class="col-md-2">
+                                            <label>Phone number</label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" placeholder="Enter Phone number" name="phno" value="{{ ss.phoneno }}">
+                                        </div>
+                                    </div>
+									
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <label>Gender</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <form style="font-weight: 300;color: #000;">
+                                            <label class="radio-inline">
+                                              <input type="radio" name="gender1" value="Male" {% if ss.gender == 'Male' %}checked{% endif %}>Male
+                                            </label>
+                                            <label class="radio-inline">
+                                              <input type="radio" name="gender1" value="Female" {% if ss.gender == 'Female' %}checked{% endif %}>Female
+                                            </label>
+                                           <label class="radio-inline" >
+                                              <input type="radio" name="gender1" value="Others" {% if ss.gender == 'Others' %}checked{% endif %}>Others
+                                            </label>
+                                          </form>   
+                                        </div>
+                                    
+                                </div>
+								  <div class="row">
+                                        <div class="col-md-2">
+                                            <label>Age</label>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="wide form-control" name="age1">
+                                                <option data-display="Select">Select</option>
+                                                {% for x in vamshi %}
+                                                 <option value="{{ x.id }}" {% if ss.age_id == x.id %}selected{% endif %}>{{ x.age}}</option>
+
+                                                    {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+
+								  <div class="row">
+                                        <div class="col-md-2">
+                                            <label>Hobbies</label>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            
+                                            <label class="checkbox-inline">
+                                              <input type="checkbox" name="hobbies1" value="Cricket" {% if ss.hobbies == 'Cricket' %}checked{% endif %}>Cricket
+                                            </label>
+                                            <label class="checkbox-inline">
+                                              <input type="checkbox" name="hobbies1" value="Carroms" {% if ss.hobbies == 'Carroms' %}checked{% endif %}>Carroms
+                                            </label>
+                                            <label class="checkbox-inline">
+                                              <input type="checkbox" name="hobbies1" value="Kabaddi" {% if ss.hobbies == 'Kabaddi' %}checked{% endif %}>Kabaddi
+                                            </label>
+                                            <label class="checkbox-inline">
+                                              <input type="checkbox" name="hobbies1" value="Basket Ball" {% if ss.hobbies == 'Basket Ball' %}checked{% endif %}>Basket Ball
+                                            </label>
+                                             
+                                        </div>
+                                    </div>
+                                    
+									<div class="row">
+                                        <div class="col-md-2">
+                                             <label>State</label>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="wide form-control" name="statename" >
+                                                <option data-display="Select">Select</option>
+                                                {% for x in addstate %}
+                                                 <option value="{{ x.id }}" {% if ss.state_id == x.id %}selected{% endif %}>{{ x.state1}}</option>
+
+                                                    {% endfor %}
+                                            </select>
+                                        </div>
+{#                                            <label>State </label>#}
+{#                                        </div>#}
+{#                                        <div class="col-sm-6">#}
+{#                                            <input type="text" class="form-control" placeholder="Enter State name" name="statename">#}
+{#                                        </div>#}
+                                    </div>
+									<div class="row">
+                                        <div class="col-md-2">
+                                            <label>City</label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" placeholder="Enter City name" name="cityname1" value="{{ ss.city }}">
+                                        </div>
+                                    </div>
+									<div class="row">
+                                        <div class="col-md-2">
+                                            <label>About</label>
+                                        </div>
+                                        <div class="col-sm-6" >
+                                            <textarea type="text" class="form-control" placeholder="About yourself" name="about1">{{ ss.about }}</textarea>
+                                        </div>
+									
+                                    </div>
+									<div class="row">
+                                        <div class="col-md-2">
+                                            <label>Upload photo</label>
+                                        </div>
+										 <div class="col-sm-6">
+										 <input type="file" id="file" value="{{ss.Uploadphoto.url}}" name="myfiles[]" multiple/>
+										 </div>
+                                        <div>
+                                            <img src="{{ss.Uploadphoto.url}}">
+                                        </div>
+							</div>
+						</div>
+					</div>
+                        </div>
+
+                                        <div class="text-center">
+{#                                            <a href="#" type="submit" class="btn btn-m theme-btn sumnit_btn">Submit</a>#}
+                                            <center><input type="submit" class="btn btn-m theme-btn sumnit_btn"></center>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                    </div>
+
+                                </div>
+                            </section>
+                    {% endblock %}

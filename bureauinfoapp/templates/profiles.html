@@ -1,0 +1,370 @@
+{% extends 'headfooter.html' %}
+{% block content %}
+    {% load staticfiles %}
+				<section>
+                            <section class="list_jobs">
+			<div class="container">
+			
+                
+                <div class="row">
+							<div class="col-sm-7">
+								
+							</div>
+							
+							
+						</div>
+                
+				<div class="row">
+				
+                    <div class="no_padding_left col-md-offset-2 col-sm-8">
+                        {%  for x in akshay %}
+						<div class="job-verticle-list">
+							<div class="vertical-job-card">
+								
+								<div class="vertical-job-body">
+									<div class="row">
+										<div class="col-md-9 col-sm-8">
+                                            
+											<ul class="can-skils">
+                                                <div class="vrt-job-cmp-logo">
+                                                 <a href="{% static 'job-detail.html' %}">
+                                                     <span style="margin-top: 8px; display: block;" class="custom-checkbox">
+                                                        <input type="checkbox" id="1">
+                                                        <label for="1"></label>
+                                                     </span>
+                                                </a>
+                                                </div>
+												<li><h5><a href="#">1</a></h5> 
+                         
+                                                </li>
+												
+											</ul>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-4 profile_basic_pic">
+                                                    <div class="user_image">
+                                                        <img src="{{ x.upload.url }}">
+                                                    </div>
+                                                    
+                                                </div>
+                                                
+                                                <div class="profile_basic">
+
+                                                    <label class="label">First Name</label><div class="info">{{ x.firstname }}</div>
+                                                        <div class="clearfix"></div><div class="spacer_4"></div>
+
+
+
+                                                        <label class="label">Second Name</label><div class="info">{{ x.lastname }}</div>
+                                                    <div class="clearfix"></div><div class="spacer_4"></div>
+
+                                                    <label class="label">gender</label><div class="info">{{ x.gender }}</div>
+                                                        <div class="clearfix"></div><div class="spacer_4"></div>
+
+                                                    <label class="label">Age</label><div class="info">{{ x.age }}</div>
+                                                    <div class="clearfix"></div><div class="spacer_4"></div>
+
+
+
+                                                    <label class="label">state</label><div class="info">{{ x.state}}</div>
+                                                        <div class="clearfix"></div><div class="spacer_4"></div>
+
+
+                                                                            <label class="label">city</label><div class="info">{{ x.city }}</div>
+                                                            <div class="clearfix"></div><div class="spacer_4"></div>
+
+                                                        <label class="label">Email</label><div class="info">{{ x.email }}</div>
+                                                    <div class="clearfix"></div>
+                                                    
+                                                    
+                                                        <label class="label">phone number</label><div class="info">{{ x.phoneno }}</div>
+                                                        <div class="clearfix"></div>
+                                                    
+                                                </div>
+                                            </div>
+										</div>
+										
+									</div>
+								</div>
+								<div class="vertical-job-footer">
+									<div class="row">
+										<div class="col-md-7 col-sm-7">
+											<div style="margin-top: 12px;" class="cmp-job-rating">
+												<p>I have made this profile on behalf of my self.... More</p>
+											</div>
+										</div>
+                                        
+										<div class="col-md-5 col-sm-3">
+											<div class="cmp-job-review">
+												<a style="padding: 3px 2px;    min-width: 140px;background: #f28383 !important;" href="{% url 'viewprofile' x.id %}" class="btn-job theme-btn job-apply">View full profile</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+                    {% endfor %}
+{#                        #}
+{#                   <div class="job-verticle-list">#}
+{#							<div class="vertical-job-card">#}
+{#								#}
+{#								<div class="vertical-job-body">#}
+{#									<div class="row">#}
+{#										<div class="col-md-9 col-sm-8">#}
+{#                                            #}
+{#											<ul class="can-skils">#}
+{#                                                <div class="vrt-job-cmp-logo">#}
+{#                                                 <a href="{% static 'job-detail.html' %}">#}
+{#                                                     <span style="margin-top: 8px; display: block;" class="custom-checkbox">#}
+{#                                                        <input type="checkbox" id="1">#}
+{#                                                        <label for="1"></label>#}
+{#                                                     </span>#}
+{#                                                </a>#}
+{#                                                </div>#}
+{#												<li><h5><a href="#">1</a></h5> #}
+{#                         #}
+{#                                                </li>#}
+{#												#}
+{#											</ul>#}
+{#                                            #}
+{#                                            <div class="row">#}
+{#                                                <div class="col-md-4 profile_basic_pic">#}
+{#                                                    <div class="user_image">#}
+{#                                                        <img src="{% static 'img/01.jpg' %}">#}
+{#                                                    </div>#}
+{#                                                    #}
+{#                                                </div>#}
+{#                                                #}
+{#                                                <div class="profile_basic">#}
+{##}
+{#                                                    <label class="label">First Name</label><div class="info">saipoojitha</div>#}
+{#                                                        <div class="clearfix"></div><div class="spacer_4"></div>#}
+{##}
+{##}
+{##}
+{#                                                        <label class="label">Second Name</label><div class="info">reddy</div>#}
+{#                                                    <div class="clearfix"></div><div class="spacer_4"></div>#}
+{##}
+{#                                                    <label class="label">gender</label><div class="info">female</div>#}
+{#                                                        <div class="clearfix"></div><div class="spacer_4"></div>#}
+{##}
+{#                                                                        <label class="label">Age</label><div class="info">20</div>#}
+{#                                                    <div class="clearfix"></div><div class="spacer_4"></div>#}
+{##}
+{##}
+{##}
+{#                                                    <label class="label">state</label><div class="info">ap</div>#}
+{#                                                        <div class="clearfix"></div><div class="spacer_4"></div>#}
+{##}
+{##}
+{#                                                                            <label class="label">city</label><div class="info">madhapur</div>#}
+{#                                                            <div class="clearfix"></div><div class="spacer_4"></div>#}
+{##}
+{#                                                        <label class="label">Email</label><div class="info">sai@gmail.com</div>#}
+{#                                                    <div class="clearfix"></div>#}
+{#                                                    #}
+{#                                                    #}
+{#                                                        <label class="label">phone number</label><div class="info">99999999999</div>#}
+{#                                                        <div class="clearfix"></div>#}
+{#                                                    #}
+{#                                                </div>#}
+{#                                            </div>#}
+{#										</div>#}
+{#										#}
+{#									</div>#}
+{#								</div>#}
+{#								<div class="vertical-job-footer">#}
+{#									<div class="row">#}
+{#										<div class="col-md-7 col-sm-7">#}
+{#											<div style="margin-top: 12px;" class="cmp-job-rating">#}
+{#												<p>I have made this profile on behalf of my self.... More</p>#}
+{#											</div>#}
+{#										</div>#}
+{#                                        #}
+{#										<div class="col-md-5 col-sm-3">#}
+{#											<div class="cmp-job-review">#}
+{#												<a style="padding: 3px 2px;    min-width: 140px;background: #f28383 !important;" href="{% url 'viewprofile' %}" class="btn-job theme-btn job-apply">View full profile</a>#}
+{#											</div>#}
+{#										</div>#}
+{#									</div>#}
+{#								</div>#}
+{#							</div>#}
+{#						</div>#}
+{#                        #}
+{#                   <div class="job-verticle-list">#}
+{#							<div class="vertical-job-card">#}
+{#								#}
+{#								<div class="vertical-job-body">#}
+{#									<div class="row">#}
+{#										<div class="col-md-9 col-sm-8">#}
+{#                                            #}
+{#											<ul class="can-skils">#}
+{#                                                <div class="vrt-job-cmp-logo">#}
+{#                                                 <a href="{% static 'job-detail.html' %}">#}
+{#                                                     <span style="margin-top: 8px; display: block;" class="custom-checkbox">#}
+{#                                                        <input type="checkbox" id="1">#}
+{#                                                        <label for="1"></label>#}
+{#                                                     </span>#}
+{#                                                </a>#}
+{#                                                </div>#}
+{#												<li><h5><a href="#">1</a></h5> #}
+{#                         #}
+{#                                                </li>#}
+{#												#}
+{#											</ul>#}
+{#                                            #}
+{#                                            <div class="row">#}
+{#                                                <div class="col-md-4 profile_basic_pic">#}
+{#                                                    <div class="user_image">#}
+{#                                                        <img src="{% static 'img/01.jpg' %}">#}
+{#                                                    </div>#}
+{#                                                    #}
+{#                                                </div>#}
+{#                                                #}
+{#                                                <div class="profile_basic">#}
+{##}
+{#                                                    <label class="label">First Name</label><div class="info">saipoojitha</div>#}
+{#                                                        <div class="clearfix"></div><div class="spacer_4"></div>#}
+{##}
+{##}
+{##}
+{#                                                        <label class="label">Second Name</label><div class="info">reddy</div>#}
+{#                                                    <div class="clearfix"></div><div class="spacer_4"></div>#}
+{##}
+{#                                                    <label class="label">gender</label><div class="info">female</div>#}
+{#                                                        <div class="clearfix"></div><div class="spacer_4"></div>#}
+{##}
+{#                                                                        <label class="label">Age</label><div class="info">20</div>#}
+{#                                                    <div class="clearfix"></div><div class="spacer_4"></div>#}
+{##}
+{##}
+{##}
+{#                                                    <label class="label">state</label><div class="info">ap</div>#}
+{#                                                        <div class="clearfix"></div><div class="spacer_4"></div>#}
+{##}
+{##}
+{#                                                                            <label class="label">city</label><div class="info">madhapur</div>#}
+{#                                                            <div class="clearfix"></div><div class="spacer_4"></div>#}
+{##}
+{#                                                        <label class="label">Email</label><div class="info">sai@gmail.com</div>#}
+{#                                                    <div class="clearfix"></div>#}
+{#                                                    #}
+{#                                                    #}
+{#                                                        <label class="label">phone number</label><div class="info">99999999999</div>#}
+{#                                                        <div class="clearfix"></div>#}
+{#                                                    #}
+{#                                                </div>#}
+{#                                            </div>#}
+{#										</div>#}
+{#										#}
+{#									</div>#}
+{#								</div>#}
+{#								<div class="vertical-job-footer">#}
+{#									<div class="row">#}
+{#										<div class="col-md-7 col-sm-7">#}
+{#											<div style="margin-top: 12px;" class="cmp-job-rating">#}
+{#												<p>I have made this profile on behalf of my self.... More</p>#}
+{#											</div>#}
+{#										</div>#}
+{#                                        #}
+{#										<div class="col-md-5 col-sm-3">#}
+{#											<div class="cmp-job-review">#}
+{#												<a style="padding: 3px 2px;    min-width: 140px;background: #f28383 !important;" href="{% url 'viewprofile' %}" class="btn-job theme-btn job-apply">View full profile</a>#}
+{#											</div>#}
+{#										</div>#}
+{#									</div>#}
+{#								</div>#}
+{#							</div>#}
+{#						</div>#}
+{#                        #}
+{#                        <div class="job-verticle-list">#}
+{#							<div class="vertical-job-card">#}
+{#								#}
+{#								<div class="vertical-job-body">#}
+{#									<div class="row">#}
+{#										<div class="col-md-9 col-sm-8">#}
+{#                                            #}
+{#											<ul class="can-skils">#}
+{#                                                <div class="vrt-job-cmp-logo">#}
+{#                                                 <a href="index.html">#}
+{#                                                     <span style="margin-top: 8px; display: block;" class="custom-checkbox">#}
+{#                                                        <input type="checkbox" id="1">#}
+{#                                                        <label for="1"></label>#}
+{#                                                     </span>#}
+{#                                                </a>#}
+{#                                                </div>#}
+{#												<li><h5><a href="#">1</a></h5> #}
+{#                         #}
+{#                                                </li>#}
+{#												#}
+{#											</ul>#}
+{#                                            #}
+{#                                            <div class="row">#}
+{#                                                <div class="col-md-4 profile_basic_pic">#}
+{#                                                    <div class="user_image">#}
+{#                                                        <img src="{% static 'img/01.jpg' %}">#}
+{#                                                    </div>#}
+{#                                                    #}
+{#                                                </div>#}
+{#                                                #}
+{#                                                <div class="profile_basic">#}
+{##}
+{#                                                    <label class="label">First Name</label><div class="info">saipoojitha</div>#}
+{#                                                        <div class="clearfix"></div><div class="spacer_4"></div>#}
+{##}
+{##}
+{##}
+{#                                                        <label class="label">Second Name</label><div class="info">reddy</div>#}
+{#                                                    <div class="clearfix"></div><div class="spacer_4"></div>#}
+{##}
+{#                                                    <label class="label">gender</label><div class="info">female</div>#}
+{#                                                        <div class="clearfix"></div><div class="spacer_4"></div>#}
+{##}
+{#                                                                        <label class="label">Age</label><div class="info">20</div>#}
+{#                                                    <div class="clearfix"></div><div class="spacer_4"></div>#}
+{##}
+{##}
+{##}
+{#                                                    <label class="label">state</label><div class="info">ap</div>#}
+{#                                                        <div class="clearfix"></div><div class="spacer_4"></div>#}
+{##}
+{##}
+{#                                                                            <label class="label">city</label><div class="info">madhapur</div>#}
+{#                                                            <div class="clearfix"></div><div class="spacer_4"></div>#}
+{##}
+{#                                                        <label class="label">Email</label><div class="info">sai@gmail.com</div>#}
+{#                                                    <div class="clearfix"></div>#}
+{#                                                    #}
+{#                                                    #}
+{#                                                        <label class="label">phone number</label><div class="info">99999999999</div>#}
+{#                                                        <div class="clearfix"></div>#}
+{#                                                    #}
+{#                                                </div>#}
+{#                                            </div>#}
+{#										</div>#}
+{#										#}
+{#									</div>#}
+{#								</div>#}
+{#								<div class="vertical-job-footer">#}
+{#									<div class="row">#}
+{#										<div class="col-md-7 col-sm-7">#}
+{#											<div style="margin-top: 12px;" class="cmp-job-rating">#}
+{#												<p>I have made this profile on behalf of my self.... More</p>#}
+{#											</div>#}
+{#										</div>#}
+{#                                        #}
+{#										<div class="col-md-5 col-sm-3">#}
+{#											<div class="cmp-job-review">#}
+{#												<a style="padding: 3px 2px;    min-width: 140px;background: #f28383 !important;" href="{% url 'viewprofile' %}" class="btn-job theme-btn job-apply">View full profile</a>#}
+{#											</div>#}
+{#										</div>#}
+{#									</div>#}
+{#								</div>#}
+{#							</div>#}
+{#						</div>#}
+{#						#}
+					</div>
+                    </div>				
+			</div>
+		</section>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'headfooter.html' %}
+{% block content %}
+    {% load staticfiles %}
+    <section class="veiw_profile">
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					
+					<div class="col-md-8 col-md-offset-2">
+						
+                        <div class="view_profile">
+                        
+						<div class="detail-wrapper">
+							<div class="detail-wrapper-body">
+
+							</div>
+						</div>
+						
+						<div class="detail-wrapper info_user_a">
+                            <div class="detail-wrapper-header">
+                                <h4>Basic Details</h4>
+
+                                <span>
+                                    <button class="editbtn btn-primary"><a href="{% url 'edit' kcr.id %}">Edit Profile</a></button>
+
+                                </span>
+							</div>
+							<div class="detail-wrapper-body BASIC_DETAILS">
+								<div class="row">
+                                    <div class="col-md-offset-3 col-md-6">
+                                        <p><span> First Name</span> <span>: &nbsp;{{ kcr.firstname }} </span></p>
+                                        <p><span> Second Name</span> <span>: &nbsp;{{ kcr.lastname }} </span></p>
+                                        <p><span>Email Id</span> <span>: &nbsp;{{ kcr.email }}</span></p>
+                                        <p><span>PhoneNumber</span> <span>: &nbsp;{{ kcr.phoneno }}</span></p>
+                                        <p><span>Gender</span> <span>: &nbsp;{{ kcr.gender }}</span></p>
+                                        <p><span>Age  </span> <span>: &nbsp;{{ kcr.age }}</span></p>
+                                        <p><span>Hobbies   </span> <span>: &nbsp;{{ kcr.hobbies }}</span></p>
+                                        <p><span>State   </span> <span>: &nbsp;{{ kcr.state }}</span></p>
+                                        <p><span>City  </span> <span>: &nbsp;{{ kcr.city }}</span></p>
+                                        <p><span>About</span> <span>: &nbsp;{{ kcr.about }}</span></p>
+										<p><span>Uploaded image</span> <span>: &nbsp;<img src="{{kcr.upload.url}}" style="height:100px;"></span></p>
+                                    </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button class="deletebtn btn-primary"><a href="{% url 'delete' kcr.id %}">Delete</a></button>
+
+
+
+                                </div>
+
+                            <!-- Sidebar -->
+					</div>
+
+				</div>
+			
+                </div>
+                    </div>
+                </div>
+            </div>
+
+{% endblock %}
+                            
